@@ -81,7 +81,7 @@
                     category_Html,
                     function(category_Html) {
                         // Switch CSS class active to menu button
-                        $helper.switchMenuToActive();
+                        $helper.switchMenuToActive(chosen_Category_Type);
 
                         var categoriesViewHtml =
                             showCategoryListHTML(filtered_Categories_Data,
