@@ -14,7 +14,6 @@
         if (buttonClass === 'Closures') { buttonClass = "Styles"; }
         // Add 'active' to menu button if not already there
         var buttonClassName = "." + buttonClass + "Button";
-        console.log("buttonClassName: " + buttonClassName);
         classes = document.querySelector(buttonClassName).className;
         if (classes.indexOf("active") == -1) {
             classes += " active";

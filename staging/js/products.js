@@ -100,7 +100,7 @@
                     product_Html,
                     function(product_Html) {
                         // Switch CSS class active to menu button
-                        $helper.switchMenuToActive();
+                        //$helper.switchMenuToActive();
 
                         var menuItemsViewHtml =
                             showProductListHTML(productListData,
@@ -174,7 +174,7 @@
                         product_Details_Html,
                         function(product_Details_Html) {
                             // Switch CSS class active to menu button
-                            $helper.switchMenuToActive();
+                            //$helper.switchMenuToActive();
 
                             var productDetailsViewHtml =
                                 showProductDetailsHTML(productDetailsData,
