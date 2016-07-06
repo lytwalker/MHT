@@ -1,0 +1,244 @@
+body {
+  /*font-size: 16px;
+  color: #fff;
+  font-family: 'Oxygen', sans-serif;*/
+  background-color: #eee;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #fff;
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
+}
+
+#brand-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#main-brand {
+  font-size: 1.4em;
+  cursor: pointer;
+  font-weight: bold;
+  color: #A62B5C;
+}
+
+#main-brand small {
+  float: right;
+  font-weight: normal;
+}
+
+.navbar-brand {
+}
+
+.navbar-brand h1 
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+}
+.navbar-brand p { 
+}
+.navbar-brand p span {
+}
+
+
+#search-nav {
+  border-top: none;
+}
+#search-nav .form-control,
+#search-nav button {
+  border-radius: 0;
+}
+#search-nav button {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #F9408A;
+  border-color: #F9408A;
+}
+#search-nav button:hover
+ {
+  transition: all 0.8s ease;
+  color: #F9408A !important;
+  background-color: #fff !important;
+}
+#search-nav div a strong {
+  text-transform: uppercase;
+}
+#menu-nav-button {
+  margin-right: 0;
+  margin-bottom: 0;
+  color: #F9408A;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+#menu-nav-button .sr-only {
+  width: initial;
+  height: initial;
+  clip: initial;
+  margin: -3px;
+}
+#menu-nav ul {
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  width: 100%;
+}
+#menu-nav > li.active > a,
+#menu-nav > li > a:hover {
+  color: #fff;
+  transition: all 0.8s ease;
+  background-color: #F9408A !important;
+}
+#menu-nav a {
+  border-radius: 0;
+  text-transform: uppercase;
+}
+#menu-nav a.dropdown-toggle {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+#menu-nav .caret {
+  display: none;
+}
+#menu-navbar-collapse {
+}
+.bg-grey {
+  background-color: #ccc;
+}
+
+.youtube-vid > iframe {
+  margin: 30px auto;
+  display: block;
+}
+
+h2,
+h3 {
+  color: #F9408A;
+  text-transform: uppercase;
+}
+h2 {
+  margin: 0 0 20px;
+}
+a {
+  color: #F9408A;
+}
+
+hr {
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+  display: none;
+}
+
+big {
+  font-weight: 300;
+}
+
+/** FOOTER **/
+footer > div {
+  padding: 40px 80px;
+}
+footer h3 {
+  color: #fff;
+  font-weight: bold;
+}
+footer #mc_embed_signup_scroll p {
+  color: #fff;
+  font-weight: normal;
+}
+footer #mc_embed_signup_scroll label {
+  margin: 0 0 20px;  
+}
+footer input {
+  border: none !important;
+  border-radius: 0 !important;
+  height: initial !important;
+}
+.clear {
+  padding: 0;
+}
+.email {
+  padding: 10px 15px !important;
+  width: 66.66% !important;
+}
+.button {
+  width: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #F9408A !important;
+  line-height: 1em !important;
+  height: initial !important;
+  padding: 12px 15px !important;
+}
+.button:hover
+ {
+  transition: all 0.8s ease;
+  color: #F9408A !important;
+  background-color: #fff !important;
+}
+
+
+/********** Medium devices only **********/
+@media (max-width: 767px) {
+  #main-brand {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  #main-brand small {
+    float: none;
+  }
+  #search-nav .form-control {
+    text-align: center;
+  }
+  #search-nav button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #search-nav div a strong {
+    text-align: center;
+    margin: 20px 0;
+    display: block;
+  }
+  .email {
+    text-align: center;
+    margin: 10px 0;
+    width: 100% !important;
+  }
+}
+
+
+/********** Medium devices only **********/
+@media (max-width: 425px) {
+  #menu-nav .dropdown-menu {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #copyright p {
+    text-align: center;
+    float: none !important;
+  }
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+  .product-tile {
+    margin: 10px auto 26px;
+  }
+  hr {
+  display: block;
+  }
+  footer > div {
+    padding: 40px 30px;
+  }
+}

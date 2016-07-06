@@ -1,0 +1,35 @@
+.list {
+	margin-bottom: 40px;
+}
+
+.menu-item-photo > img {
+	margin: 0 auto;
+    border-radius: 0;
+    display: block;
+}
+
+.menu-item-description {
+    margin: 30px 0;
+}
+
+.menu-item-price {
+	font-size: 1.2em;
+}
+
+
+
+/********** Medium devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 768px) {
+  .menu-item-photo > img {
+    display: block;
+  }
+}
+
+
+
+/********** Super small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 425px) {
+  .list {
+	margin-top: 40px;
+}
+}

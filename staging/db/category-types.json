@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Wigs",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "url": ""
+    },
+    {
+        "id": 2,
+        "name": "Extensions",
+        "description": "Ut urna sapien, venenatis id facilisis vitae, posuere vel enim.",
+        "url": ""
+    },
+    {
+        "id": 3,
+        "name": "Closures",
+        "description": "In tempus tempus nunc, ut vehicula magna pellentesque vitae.",
+        "url": ""
+    },
+    {
+        "id": 4,
+        "name": "Aftercare",
+        "description": "Nullam vitae dapibus est.",
+        "url": ""
+    },
+    {
+        "id": 5,
+        "name": "Deals",
+        "description": "Nunc mattis dignissim ante, non rhoncus orci porttitor ac.",
+        "url": ""
+    }
+]
