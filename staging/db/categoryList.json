@@ -15,90 +15,97 @@
         "url": "http://davids-restaurant.herokuapp.com/categories/100.json"
     }, {
         "id": 3,
-        "typeName": "Extensions",
+        "typeName": "Wigs",
         "thumb": "thumbnail",
-        "name": "Brazilian Virgin Hair",
+        "name": "Human Hair",
         "description": "Proin quis enim ut odio volutpat dignissim vitae eu libero.",
         "url": "http://davids-restaurant.herokuapp.com/categories/1.json"
     }, {
         "id": 4,
         "typeName": "Extensions",
         "thumb": "thumbnail",
+        "name": "Brazilian Virgin Hair",
+        "description": "Proin quis enim ut odio volutpat dignissim vitae eu libero.",
+        "url": "http://davids-restaurant.herokuapp.com/categories/1.json"
+    }, {
+        "id": 5,
+        "typeName": "Extensions",
+        "thumb": "thumbnail",
         "name": "Peruvian Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/2.json"
     }, {
-        "id": 5,
+        "id": 6,
         "typeName": "Extensions",
         "thumb": "thumbnail",
         "name": "Malaysian Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/3.json"
     }, {
-        "id": 6,
+        "id": 7,
         "typeName": "Extensions",
         "thumb": "thumbnail",
         "name": "Mongolian Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/4.json"
     }, {
-        "id": 7,
+        "id": 8,
         "typeName": "Extensions",
         "thumb": "thumbnail",
         "name": "Indian Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/5.json"
     }, {
-        "id": 8,
+        "id": 9,
         "typeName": "Extensions",
         "thumb": "thumbnail",
         "name": "Cambodian Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/6.json"
     }, {
-        "id": 9,
+        "id": 10,
         "typeName": "Extensions",
         "thumb": "thumbnail",
         "name": "Ombre Virgin Hair",
         "description": "Suspendisse id turpis et massa accumsan rutrum. Fusce quis eros velit. Sed leo eros, consequat eu dapibus posuere, venenatis sed neque. ",
         "url": "http://davids-restaurant.herokuapp.com/categories/7.json"
     }, {
-        "id": 10,
+        "id": 11,
         "typeName": "Closures",
         "thumb": "thumbnail",
         "name": "Lace <br/> Brazilian Virgin Hair",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "url": "http://davids-restaurant.herokuapp.com/categories/1.json"
     }, {
-        "id": 11,
+        "id": 12,
         "typeName": "Aftercare",
         "thumb": "thumbnail",
         "name": "Full Frontal Lace <br/> Brazilian Virgin Hair",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "url": "http://davids-restaurant.herokuapp.com/categories/1.json"
     }, {
-        "id": 12,
+        "id": 13,
         "typeName": "Aftercare",
         "thumb": "thumbnail",
         "name": "Lace <br/> Peruvian Virgin Hair",
         "description": "",
         "url": "http://davids-restaurant.herokuapp.com/categories/2.json"
     }, {
-        "id": 13,
+        "id": 14,
         "typeName": "Aftercare",
         "thumb": "thumbnail",
         "name": "Full Frontal Lace <br/> Peruvian Virgin Hair",
         "description": "",
         "url": "http://davids-restaurant.herokuapp.com/categories/2.json"
     }, {
-        "id": 14,
+        "id": 15,
         "typeName": "Aftercare",
         "thumb": "thumbnail",
         "name": "Lace <br/> Malaysian Virgin Hair",
         "description": "",
         "url": "http://davids-restaurant.herokuapp.com/categories/3.json"
     }, {
-        "id": 15,
+        "id": 16,
         "typeName": "Aftercare",
         "thumb": "thumbnail",
         "name": "Full Frontal Lace <br/> Malaysian Virgin Hair",

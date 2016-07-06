@@ -2,8 +2,8 @@
 
 
 	// daabase
-    var categories_Json_Url = "db/categories.json";
-    var products_Json_Url = "db/product-items.json";
+    var categories_Json_Url = "db/categoryList.json";
+    var products_Json_Url = "db/productList.json";
 
 	// global
 	var products = {};
@@ -197,7 +197,6 @@
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "name", productDetailsData.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", filtered_Products_Data.category.name);
-        console.log("productDetailsData: " + JSON.stringify(productDetailsData.preview));
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row'>";

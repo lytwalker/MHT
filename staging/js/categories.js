@@ -5,7 +5,7 @@
 
     // database
     var category_types_Json_Url = "db/category-types.json";
-    var categories_Json_Url = "db/categories.json";
+    var categories_Json_Url = "db/categoryList.json";
 
 	// snippets
     var page_Header_Html = "snippets/page-header.html";
