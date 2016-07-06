@@ -3,19 +3,22 @@
     var helper = {};
 
     // Remove the class 'active' from home and switch to Menu button
-    helper.switchMenuToActive = function(buttonName) {
+    helper.switchMenuToActive = function(buttonClass) {
         // Remove 'active' from home button
-        var classes = document.querySelector("#menu-nav-button-home").className;
+        var classes = document.querySelector(".active").className;
         classes = classes.replace(new RegExp("active", "g"), "");
-        document.querySelector("#menu-nav-button-home").className = classes;
+        document.querySelector(".active").className = classes;
 
+        if (buttonClass === 'Wigs') { buttonClass = "Styles"; }
+        if (buttonClass === 'Extensions') { buttonClass = "Styles"; }
+        if (buttonClass === 'Closures') { buttonClass = "Styles"; }
         // Add 'active' to menu button if not already there
-        var buttonId = "#menu-nav-button-" + buttonName;
-        console.log("buttonId: " + buttonId);
-        classes = document.querySelector(buttonId).className;
+        var buttonClassName = "." + buttonClass + "Button";
+        console.log("buttonClassName: " + buttonClassName);
+        classes = document.querySelector(buttonClassName).className;
         if (classes.indexOf("active") == -1) {
             classes += " active";
-            document.querySelector(buttonId).className = classes;
+            document.querySelector(buttonClassName).className = classes;
         }
     };
 
