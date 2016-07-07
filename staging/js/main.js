@@ -16,6 +16,7 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
     // snippets
     var home_Html = "snippets/pages/home-snippet.html";
     var about_Html = "snippets/pages/about-snippet.html";
+    var contact_Html = "snippets/pages/contact-snippet.html";
     var help_Html = "snippets/pages/help-snippet.html";
 
     // On page load (before images or CSS)
@@ -38,6 +39,22 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
         $ajaxUtils.sendGetRequest(
             about_Html,
             function(responseText) {
+                // Switch CSS class active to menu button
+                $helper.switchMenuToActive("About");
+                document.querySelector("#main-content")
+                    .innerHTML = responseText;
+            },
+            false);
+    };
+
+    // Load the about view
+    main.loadContact = function(productId) {
+        $helper.showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+            contact_Html,
+            function(responseText) {
+                // Switch CSS class active to menu button
+                $helper.switchMenuToActive("Contact");
                 document.querySelector("#main-content")
                     .innerHTML = responseText;
             },
@@ -50,6 +67,8 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
         $ajaxUtils.sendGetRequest(
             help_Html,
             function(responseText) {
+                // Switch CSS class active to menu button
+                $helper.switchMenuToActive("Home");
                 document.querySelector("#main-content")
                     .innerHTML = responseText;
             },

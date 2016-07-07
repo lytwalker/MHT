@@ -1,32 +1,31 @@
-[
-    {
-        "id": 1,
-        "name": "Wigs",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "url": ""
-    },
-    {
-        "id": 2,
-        "name": "Extensions",
-        "description": "Ut urna sapien, venenatis id facilisis vitae, posuere vel enim.",
-        "url": ""
-    },
-    {
-        "id": 3,
-        "name": "Closures",
-        "description": "In tempus tempus nunc, ut vehicula magna pellentesque vitae.",
-        "url": ""
-    },
-    {
-        "id": 4,
-        "name": "Aftercare",
-        "description": "Nullam vitae dapibus est.",
-        "url": ""
-    },
-    {
-        "id": 5,
-        "name": "Deals",
-        "description": "Nunc mattis dignissim ante, non rhoncus orci porttitor ac.",
-        "url": ""
-    }
-]
+[{
+    "id": 1,
+    "banner": "landscape",
+    "name": "Wigs",
+    "description": "Choose your Perfect style",
+    "url": ""
+}, {
+    "id": 2,
+    "banner": "landscape",
+    "name": "Extensions",
+    "description": "Get the longer look you want",
+    "url": ""
+}, {
+    "id": 3,
+    "banner": "landscape",
+    "name": "Closures",
+    "description": "Keep your look seamless",
+    "url": ""
+}, {
+    "id": 4,
+    "banner": "landscape",
+    "name": "Aftercare",
+    "description": "Look after your new look",
+    "url": ""
+}, {
+    "id": 5,
+    "banner": "landscape",
+    "name": "Deals",
+    "description": "More than you would expect",
+    "url": ""
+}]

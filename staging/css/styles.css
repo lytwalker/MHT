@@ -1,7 +1,7 @@
 body {
   /*font-size: 16px;
-  color: #fff;
-  font-family: 'Oxygen', sans-serif;*/
+  color: #fff;*/
+  font-family: 'Roboto', sans-serif;
   background-color: #eee;
 }
 
@@ -169,6 +169,7 @@ footer input {
   line-height: 1em !important;
   height: initial !important;
   padding: 12px 15px !important;
+  border-radius: 0;
 }
 .button:hover
  {

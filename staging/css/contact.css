@@ -1,0 +1,14 @@
+
+#contact {
+    text-align: center;
+    padding: 40px 80px;
+}
+#contact p {
+    margin: 0 0 40px;
+}
+#contact .well,
+#contact .input-group-addon,
+#contact .form-control {
+	border-radius: 0;
+}
+#success_message{ display: none;}

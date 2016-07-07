@@ -124,7 +124,7 @@
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", productListData.category.description);
 
         var finalHtml = page_Header_Html;
-        finalHtml += "<div class='container-fluid'><section class='row'>";
+        finalHtml += "<div class='container-fluid'><section class='row list'>";
 
         // Loop over menu items
         var menuItems = productListData.products;
