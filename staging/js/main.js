@@ -1,4 +1,4 @@
-$(function() { // Same as document.addEventListener("DOMContentLoaded"...
+/*$(function() { // Same as document.addEventListener("DOMContentLoaded"...
 
     // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
     $("#menu-nav-button").blur(function(event) {
@@ -7,7 +7,7 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
             $("#menu-navbar-collapse").collapse('hide');
         }
     });
-});
+});*/
 
 (function(global) {
 
