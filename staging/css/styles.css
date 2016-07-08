@@ -216,7 +216,7 @@ footer input {
 
 
 /********** Medium devices only **********/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #main-brand {
     margin-bottom: 20px;
     width: 100%;
