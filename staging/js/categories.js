@@ -102,8 +102,8 @@
         page_Header_Html,
         category_Html) {
 
-        console.log("banner: " + chosen_Category_Type.banner);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "categorytype_id", categoryData.categorytype.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categorytype");
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", categoryData.categorytype.id);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytype.banner);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "name", categoryData.categorytype.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", categoryData.categorytype.description);
