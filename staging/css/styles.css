@@ -237,6 +237,8 @@ footer input {
     margin: 20px 0;
     display: block;
   }
+}
+@media (max-width: 767px) {
   .email {
     text-align: center;
     margin: 10px 0;
