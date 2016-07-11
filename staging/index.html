@@ -1,127 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mandy's Hair Treasures</title>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mandy's Hair Treasures</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/carousel.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/categories.css">
     <link rel="stylesheet" type="text/css" href="css/products.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
 </head>
+
 <body>
-	<header>
-		<nav id="header-nav" class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-			    <div id="brand-nav" class="navbar-header col-lg-12 col-md-12 col-sm-12">
-					<a id="main-brand" class="navbar-brand" href="index.html">
+    <header>
+        <nav id="header-nav" class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div id="brand-nav" class="navbar-header col-lg-12 col-md-12 col-sm-12">
+                    <a id="main-brand" class="navbar-brand" href="index.html">
 						Mandy's Hair Treasures<br/>
 						<small>Quality Hair Products</small>
 					</a>
-					<form id="search-nav" class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-						  	<input type="text" class="form-control" placeholder="Search">
-							<button type="submit" class="btn btn-default">Submit</button>
-						</div>
-					<div><a href=""><strong>Free International Shipping</strong></a></div>
-					</form>
-					<button id="menu-nav-button" type="button" class="navbar-toggle collapsed col-xs-12" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
-						<span class="sr-only">Menu</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-			    </div>
-			</div>
-			<div class="bg-grey">
-				<div class="container-fluid">
-					<!-- Collect the nav links, forms, and other content for toggling -->
-				    <div id="menu-navbar-collapse" class="collapse navbar-collapse">
-				      <ul id="menu-nav" class="nav nav-pills nav-justified">
-				        <li id="menu-nav-button-Home" class="HomeButton active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-				        <li id="menu-nav-button-About" class="AboutButton"><a href="#" onclick="$main.loadAbout();">About</a></li>
-				        <li id="menu-nav-button-Styles" class="StylesButton dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
-				          <ul class="dropdown-menu">
-				            <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Wigs');">Wigs</a></li>
-				            <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Extensions');">Extensions</a></li>
-				            <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Closures');">Closures</a></li>
-				          </ul>
-				        </li>
-				        <li id="menu-nav-button-Aftercare" class="AftercareButton"><a href="#" onclick="$categories.loadCategoryList('Aftercare');">Aftercare</a></li>
-				        <li id="menu-nav-button-Deals" class="DealsButton"><a href="#" onclick="$categories.loadCategoryList('Deals');">Deals</a></li>
-				        <li id="menu-nav-button-Contact" class="ContactButton"><a href="#" onclick="$main.loadContact();">Contact Us</a></li>
-				      </ul>
-				    </div><!-- /.navbar-collapse -->
-				</div>
-			</div>
-		</nav>
-	</header>
-
-
-    <div id="main-content"></div><!-- End of #main-content -->
-
-
-	<!-- FOOTER -->
-	<footer>
-		<div id="newsletter" class="bg-grey">	
-			<div class="container-fluid">  	
-				<div id="subscribe">
-					<!-- Begin MailChimp Signup Form -->
-					<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-					<style type="text/css">
-						#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-						/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                    <form id="search-nav" class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                        <div><a href=""><strong>Free International Shipping</strong></a></div>
+                    </form>
+                    <button id="menu-nav-button" type="button" class="navbar-toggle collapsed col-xs-12" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-grey">
+                <div class="container-fluid">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div id="menu-navbar-collapse" class="collapse navbar-collapse">
+                        <ul id="menu-nav" class="nav nav-pills nav-justified">
+                            <li id="menu-nav-button-Home" class="HomeButton active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                            <li id="menu-nav-button-About" class="AboutButton"><a href="#" onclick="$main.loadAbout();">About</a></li>
+                            <li id="menu-nav-button-Styles" class="StylesButton dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Wigs');">Wigs</a></li>
+                                    <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Extensions');">Extensions</a></li>
+                                    <li class="StylesButton"><a href="#" onclick="$categories.loadCategoryList('Closures');">Closures</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-nav-button-Aftercare" class="AftercareButton"><a href="#" onclick="$categories.loadCategoryList('Aftercare');">Aftercare</a></li>
+                            <li id="menu-nav-button-Deals" class="DealsButton"><a href="#" onclick="$categories.loadCategoryList('Deals');">Deals</a></li>
+                            <li id="menu-nav-button-Contact" class="ContactButton"><a href="#" onclick="$main.loadContact();">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="main-content"></div>
+    <!-- End of #main-content -->
+    <!-- FOOTER -->
+    <footer>
+        <div id="newsletter" class="bg-grey">
+            <div class="container-fluid">
+                <div id="subscribe">
+                    <!-- Begin MailChimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                    <style type="text/css">
+                    #mc_embed_signup {
+                        background: #fff;
+                        clear: left;
+                        font: 14px Helvetica, Arial, sans-serif;
+                        width: 100%;
+                    }
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
 						   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-					</style>
-					<div id="mc_embed_signup">
-						<form action="//mandyshairtreasures.us13.list-manage.com/subscribe/post?u=7afc24e775d47a98392a61283&amp;id=0abff3b643" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						    <div id="mc_embed_signup_scroll">
-								<label for="mce-EMAIL">
-									<h3>Stay Informed</h3>
-									<p>Subscribe and stay updated on new products and deals</p>
-								</label>
-								<div class="row">
-									<input type="email" value="" name="EMAIL" class="email col-lg-8 col-md-8 col-sm-8 col-xs-12" id="mce-EMAIL" placeholder="Email address" required>
-								    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-								    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7afc24e775d47a98392a61283_0abff3b643" tabindex="-1" value=""></div>
-								    <div class="clear col-lg-4 col-md-4 col-sm-4 col-xs-12"><input type="submit" class="button" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"></div>									
-								</div>
-						    </div>
-						</form>
-					</div>
-
-					<!--End mc_embed_signup-->
-				</div>
-			</div>		
-		</div>
-		<div class="container-fluid">  	
-			<div id="footer-nav">
-				<p class="pull-right"><a href="#">Back to top</a></p>
-				<a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#" onclick="$main.loadHelp();">Help</a>
-				<p></p>				
-			</div>
-			<div id="copyright">				
-				<p class="pull-right">Proudly designed & developed by <a href="#">Sleeping Chicken Software</a></p>
-				<p>&copy; 2016 by Mandy's Hair Treasures.</p>
-			</div>
-		</div>
-	</footer>
-
-	<!-- scripts -->
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-  	<script src="js/ajax-utils.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/helper.js"></script>
-	<script type="text/javascript" src="js/categories.js"></script>
-	<script type="text/javascript" src="js/products.js"></script>
+                    </style>
+                    <div id="mc_embed_signup">
+                        <form action="//mandyshairtreasures.us13.list-manage.com/subscribe/post?u=7afc24e775d47a98392a61283&amp;id=0abff3b643" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <label for="mce-EMAIL">
+                                    <h3>Stay Informed</h3>
+                                    <p>Subscribe and stay updated on new products and deals</p>
+                                </label>
+                                <div class="row">
+                                    <input type="email" value="" name="EMAIL" class="email col-lg-8 col-md-8 col-sm-8 col-xs-12" id="mce-EMAIL" placeholder="Email address" required>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                        <input type="text" name="b_7afc24e775d47a98392a61283_0abff3b643" tabindex="-1" value="">
+                                    </div>
+                                    <div class="clear col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <input type="submit" class="button" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--End mc_embed_signup-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="footer-nav">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#" onclick="$main.loadHelp();">Help</a>
+                <p></p>
+            </div>
+            <div id="copyright">
+                <p class="pull-right">Proudly designed & developed by <a href="#">Sleeping Chicken Software</a></p>
+                <p>&copy; 2016 by Mandy's Hair Treasures.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- scripts -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="js/ajax-utils.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/helper.js"></script>
+    <script type="text/javascript" src="js/categories.js"></script>
+    <script type="text/javascript" src="js/products.js"></script>
     <script type="text/javascript" src="js/cotnact.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDrXD5pjFrduuMNFX4piu7m-_53jZs0jzs",
+        authDomain: "my-play-web-database.firebaseapp.com",
+        databaseURL: "https://my-play-web-database.firebaseio.com",
+        storageBucket: "",
+    };
+    firebase.initializeApp(config);
+
+    // Get a reference to the database service
+    //var database = firebase.database();
+    </script>
 </body>
+
 </html>

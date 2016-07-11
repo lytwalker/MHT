@@ -25,7 +25,7 @@
         $ajaxUtils.sendGetRequest(
             category_types_Json_Url,
             function(categoryTypes){
-            	category_Types_Data = categoryTypes;
+            	category_Types_Data = categoryTypes.categorytypes;
             });
     };
 
@@ -37,7 +37,7 @@
         });
         var chosenCategoryTypeData = categoryTypeJson[0];
         var chosenCategoryTypeJson =
-            '\"categorytype\": {' +
+            '\"categorytypes\": {' +
             '\"id\": ' + chosenCategoryTypeData.id + ',' +
             '\"banner\": \"' + chosenCategoryTypeData.banner + '\",' +
             '\"name\": \"' + chosenCategoryTypeData.name + '\",' +
@@ -102,11 +102,11 @@
         page_Header_Html,
         category_Html) {
 
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categorytype");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", categoryData.categorytype.id);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytype.banner);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", categoryData.categorytype.name);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", categoryData.categorytype.description);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categorytypes");
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", categoryData.categorytypes.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytypes.banner);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", categoryData.categorytypes.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", categoryData.categorytypes.description);
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row list'>";

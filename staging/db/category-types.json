@@ -1,31 +1,33 @@
-[{
-    "id": 1,
-    "banner": "landscape",
-    "name": "Wigs",
-    "description": "Choose your Perfect style",
-    "url": ""
-}, {
-    "id": 2,
-    "banner": "landscape",
-    "name": "Extensions",
-    "description": "Get the longer look you want",
-    "url": ""
-}, {
-    "id": 3,
-    "banner": "landscape",
-    "name": "Closures",
-    "description": "Keep your look seamless",
-    "url": ""
-}, {
-    "id": 4,
-    "banner": "landscape",
-    "name": "Aftercare",
-    "description": "Look after your new look",
-    "url": ""
-}, {
-    "id": 5,
-    "banner": "landscape",
-    "name": "Deals",
-    "description": "More than you would expect",
-    "url": ""
-}]
+{
+    "categorytypes": [{
+        "id": 1,
+        "banner": "landscape",
+        "name": "Wigs",
+        "description": "Choose your Perfect style",
+        "url": ""
+    }, {
+        "id": 2,
+        "banner": "landscape",
+        "name": "Extensions",
+        "description": "Get the longer look you want",
+        "url": ""
+    }, {
+        "id": 3,
+        "banner": "landscape",
+        "name": "Closures",
+        "description": "Keep your look seamless",
+        "url": ""
+    }, {
+        "id": 4,
+        "banner": "landscape",
+        "name": "Aftercare",
+        "description": "Look after your new look",
+        "url": ""
+    }, {
+        "id": 5,
+        "banner": "landscape",
+        "name": "Deals",
+        "description": "More than you would expect",
+        "url": ""
+    }]
+}
