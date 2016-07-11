@@ -30,7 +30,7 @@
     };
 
 	// Filter
-    var filterCategoriesByTypeId = function(jsonArray, typeName) {
+    var filterCategoriesByTypeName = function(jsonArray, typeName) {
         // -- get current category
         var categoryTypeJson = $.grep(category_Types_Data, function(element, index) {
             return element.name === typeName;
@@ -38,7 +38,6 @@
         var chosenCategoryTypeData = categoryTypeJson[0];
         var chosenCategoryTypeJson =
             '\"categorytypes\": {' +
-            '\"id\": ' + chosenCategoryTypeData.id + ',' +
             '\"banner\": \"' + chosenCategoryTypeData.banner + '\",' +
             '\"name\": \"' + chosenCategoryTypeData.name + '\",' +
             '\"description\": \"' + chosenCategoryTypeData.description + '\",' +
@@ -71,7 +70,7 @@
     // Builds HTML for the categories page based on the data
     // from the server
     function buildCategoryListHTML(categoriesData) {
-        filtered_Categories_Data = filterCategoriesByTypeId(categoriesData.categories, chosen_Category_Type);
+        filtered_Categories_Data = filterCategoriesByTypeName(categoriesData.categories, chosen_Category_Type);
 
         // Load title snippet of categories page
         $ajaxUtils.sendGetRequest(
@@ -103,9 +102,9 @@
         category_Html) {
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categorytypes");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", categoryData.categorytypes.id);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytypes.banner);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "name", categoryData.categorytypes.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytypes.banner);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", categoryData.categorytypes.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", categoryData.categorytypes.description);
 
         var finalHtml = page_Header_Html;

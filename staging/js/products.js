@@ -122,9 +122,9 @@
         product_Html) {
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categories");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", productListData.category.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", productListData.category.id);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", productListData.category.thumb);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", productListData.category.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", productListData.category.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", productListData.category.description);
 
         var finalHtml = page_Header_Html;
@@ -200,9 +200,9 @@
         product_Details_Html) {
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categories");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "id", filtered_Products_Data.category.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", filtered_Products_Data.category.id);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", filtered_Products_Data.category.thumb);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", productDetailsData.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", productDetailsData.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", filtered_Products_Data.category.name);
 
         var finalHtml = page_Header_Html;
