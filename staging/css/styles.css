@@ -196,7 +196,7 @@ footer input {
 .email {
   padding: 10px 15px !important;
   width: 66.66% !important;
-  min-height: 37px;
+  height: 37px !important;
 }
 .button {
   text-transform: uppercase;
