@@ -6,6 +6,9 @@ div.socialmedia {
   -ms-transform:translate(-50%,-50%);
   -webkit-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);*/
+    margin: 0;
+    padding: 0;
+    min-height: 37px;
 }
 
 
@@ -26,6 +29,7 @@ div.socialmedia {
     -moz-transition: all .5s;
     transition: all .5s;
     -webkit-font-smoothing: antialiased;
+    min-height: 37px;
 }
 
 .socialmedia a:hover {
@@ -33,7 +37,7 @@ div.socialmedia {
 }
 
 #mc_embed_signup .button {
-    width: initial;
+    min-height: 37px;
 }
 
 
@@ -125,15 +129,15 @@ div.socialmedia {
         display: block;
     }
     .socialmedia a {
-      padding: 11px 13px 12px;
+        padding: 11px 13px 12px;
     }
 }
 
 @media (max-width: 425px) {
     #mc_embed_signup .button {
         width: 85% !important;
-      }
+    }
     .socialmedia {
         width: 15% !important;
-      }
+    }
 }
