@@ -4,7 +4,7 @@
 	var categories = {};
 
     // database
-    var category_types_Json_Url = "db/category-types.json";
+    var category_types_Json_Url = "db/category-types.json"/*"https://my-first-project-d25f7.firebaseio.com/categorytypes.json"*/;
     var categories_Json_Url = "db/categoryList.json";
 
 	// snippets
