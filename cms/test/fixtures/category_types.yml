@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  banner: MyString
+  name: MyString
+  description: MyText
+  urlpath: MyString
+
+two:
+  banner: MyString
+  name: MyString
+  description: MyText
+  urlpath: MyString

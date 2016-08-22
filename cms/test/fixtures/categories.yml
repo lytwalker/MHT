@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thumb: MyString
+  name: MyString
+  description: MyText
+  url: MyString
+  categorytype_id: 
+
+two:
+  thumb: MyString
+  name: MyString
+  description: MyText
+  url: MyString
+  categorytype_id: 
