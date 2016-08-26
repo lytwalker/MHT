@@ -1,0 +1,22 @@
+<p>
+  <strong>Banner:</strong>
+  <%= @type.banner %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @type.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @type.url %>
+</p>
+
+<%= link_to 'Edit', edit_type_path(@type) %> |
+<%= link_to 'Back', types_path %>

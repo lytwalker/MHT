@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :preview
       t.string :name
       t.text :description
-      t.integer :price
+      t.decimal :price
       t.string :sku
       t.references :category, index: true, foreign_key: true
 

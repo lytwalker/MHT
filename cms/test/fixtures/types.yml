@@ -4,10 +4,10 @@ one:
   banner: MyString
   name: MyString
   description: MyText
-  urlpath: MyString
+  url: MyString
 
 two:
   banner: MyString
   name: MyString
   description: MyText
-  urlpath: MyString
+  url: MyString

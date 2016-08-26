@@ -1,10 +1,10 @@
-class CreateCategoryTypes < ActiveRecord::Migration
+class CreateTypes < ActiveRecord::Migration
   def change
-    create_table :category_types do |t|
+    create_table :types do |t|
       t.string :banner
       t.string :name
       t.text :description
-      t.string :urlpath
+      t.string :url
 
       t.timestamps null: false
     end

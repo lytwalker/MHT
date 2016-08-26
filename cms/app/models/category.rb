@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-  	belongs_to :categorytype
-	has_many :products, dependent: :destroy
+  belongs_to :type
+  has_many :products, dependent: :destroy
 end
