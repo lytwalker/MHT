@@ -2,8 +2,6 @@
 
 
 	// daabase
-    //var categories_Json_Url = "db/categoryList.json";
-    //var products_Json_Url = "db/productList.json";
     var categories_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/categories.json";
     var products_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/products.json";
 
@@ -41,35 +39,13 @@
             return element.id == categoryId;
         });
         chosen_Category_Data = categoryJson[0];
-        console.log("categoryId: " + categoryId);
-        console.log("chosen_Category_Data.id: " + chosen_Category_Data.id);
 
         // -- get products with the same category_id as the chosen_Type_data
         var filter_Json_Array_Data = $.grep(jsonArray, function(element, index) {
             return element.category_id == chosen_Category_Data.id;
         });
-        console.log("filter_Json_Array_Data: " + JSON.stringify(filter_Json_Array_Data));
 
         return filter_Json_Array_Data;
-
-        /*var chosenCategoryJson =
-            '\"category\": {' +
-            '\"id\": ' + chosen_Category_Data.id + ',' +
-            '\"typeName\": \"' + chosen_Category_Data.typeName + '\",' +
-            '\"thumb\": \"' + chosen_Category_Data.thumb + '\",' +
-            '\"name\": \"' + chosen_Category_Data.name + '\",' +
-            '\"description\": \"' + chosen_Category_Data.description + '\",' +
-            '\"url\": \"' + chosen_Category_Data.url + '\"}}';
-
-        // -- get final json array string
-        var finalJsonArrayString = "{\"products\": ";
-        var finalJsonArrayData = $.grep(jsonArray, function(element, index) {
-            return element.category_id == categoryId;
-        });
-        finalJsonArrayString += JSON.stringify(finalJsonArrayData);
-        finalJsonArrayString = finalJsonArrayString.replace(']', '], ' + chosenCategoryJson);
-        finalJsonArrayData = jQuery.parseJSON(finalJsonArrayString);
-        return finalJsonArrayData;*/
     }
 
     var getProductById = function(jsonArray, productId) {
@@ -103,7 +79,6 @@
     function buildProductListHTML(products_Data) {
         // -- get list of products filtered by category Id.
         filtered_Products_Data = filterProductsByCategory(products_Data, chosen_Category_Id);
-
         // Load title snippet of menu items page
         $ajaxUtils.sendGetRequest(
             page_Header_Html,
@@ -134,11 +109,17 @@
         page_Header_Html,
         product_Html) {
 
+
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categories");
         page_Header_Html = $helper.insertProperty(page_Header_Html, "name", chosen_Category_Data.id);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", chosen_Category_Data.thumb);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", chosen_Category_Data.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", chosen_Category_Data.description);
+        console.log("name: " + chosen_Category_Data.id);
+        console.log("banner: " + chosen_Category_Data.thumb);
+        console.log("pagetitle: " + chosen_Category_Data.name);
+        console.log("description: " + chosen_Category_Data.description);
+        //console.log("products_Data: " + JSON.stringify(products_Data));
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row list'>";
@@ -176,7 +157,7 @@
     // from the filtered products data
     function buildProductDetailsHTML(productId) {
         // -- get product details by product Id. Store it in global variable
-        productDetailsData = getProductById(filtered_Products_Data.products, productId);
+        productDetailsData = getProductById(filtered_Products_Data, productId);
 
         if (productDetailsData.length > 0) {
             // product details data
@@ -208,15 +189,16 @@
 
     // Using products data and products-details snippets html
     // build menu items view HTML to be inserted into page
-    function showProductDetailsHTML(productDetailsData,
+    function showProductDetailsHTML(
+        productDetailsData,
         page_Header_Html,
         product_Details_Html) {
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categories");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", filtered_Products_Data.category.id);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", filtered_Products_Data.category.thumb);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", chosen_Category_Data.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", chosen_Category_Data.thumb);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", productDetailsData.name);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", filtered_Products_Data.category.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", chosen_Category_Data.name);
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row'>";

@@ -50,7 +50,7 @@
             return this.insertProperty(html, pricePropName, "");;
         }
 
-        priceValue = "£" + priceValue.toFixed(2);
+        priceValue = "£" + priceValue;
         html = this.insertProperty(html, pricePropName, priceValue);
         return html;
     }
