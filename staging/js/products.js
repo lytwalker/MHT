@@ -115,11 +115,11 @@
         page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", chosen_Category_Data.thumb);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", chosen_Category_Data.name);
         page_Header_Html = $helper.insertProperty(page_Header_Html, "description", chosen_Category_Data.description);
-        console.log("name: " + chosen_Category_Data.id);
+        /*console.log("name: " + chosen_Category_Data.id);
         console.log("banner: " + chosen_Category_Data.thumb);
         console.log("pagetitle: " + chosen_Category_Data.name);
         console.log("description: " + chosen_Category_Data.description);
-        //console.log("products_Data: " + JSON.stringify(products_Data));
+        console.log("products_Data: " + JSON.stringify(products_Data));*/
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row list'>";
