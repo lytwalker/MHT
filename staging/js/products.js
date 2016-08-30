@@ -2,8 +2,10 @@
 
 
 	// daabase
-    var categories_Json_Url = "db/categoryList.json";
-    var products_Json_Url = "db/productList.json";
+    //var categories_Json_Url = "db/categoryList.json";
+    //var products_Json_Url = "db/productList.json";
+    var categories_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/categories.json";
+    var products_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/products.json";
 
 	// global
 	var products = {};
@@ -16,6 +18,7 @@
 	// properties
     var categories_Data = "";
     var chosen_Category_Id = "";
+    var chosen_Category_Data = "";
     var filtered_Products_Data = "";
 
 
@@ -27,7 +30,7 @@
         $ajaxUtils.sendGetRequest(
             categories_Json_Url,
             function(categories){
-    			categories_Data = categories.categories;
+    			categories_Data = categories;
             });
     };
 
@@ -37,15 +40,26 @@
         var categoryJson = $.grep(categories_Data, function(element, index) {
             return element.id == categoryId;
         });
-        var chosenCategoryData = categoryJson[0];
-        var chosenCategoryJson =
+        chosen_Category_Data = categoryJson[0];
+        console.log("categoryId: " + categoryId);
+        console.log("chosen_Category_Data.id: " + chosen_Category_Data.id);
+
+        // -- get products with the same category_id as the chosen_Type_data
+        var filter_Json_Array_Data = $.grep(jsonArray, function(element, index) {
+            return element.category_id == chosen_Category_Data.id;
+        });
+        console.log("filter_Json_Array_Data: " + JSON.stringify(filter_Json_Array_Data));
+
+        return filter_Json_Array_Data;
+
+        /*var chosenCategoryJson =
             '\"category\": {' +
-            '\"id\": ' + chosenCategoryData.id + ',' +
-            '\"typeName\": \"' + chosenCategoryData.typeName + '\",' +
-            '\"thumb\": \"' + chosenCategoryData.thumb + '\",' +
-            '\"name\": \"' + chosenCategoryData.name + '\",' +
-            '\"description\": \"' + chosenCategoryData.description + '\",' +
-            '\"url\": \"' + chosenCategoryData.url + '\"}}';
+            '\"id\": ' + chosen_Category_Data.id + ',' +
+            '\"typeName\": \"' + chosen_Category_Data.typeName + '\",' +
+            '\"thumb\": \"' + chosen_Category_Data.thumb + '\",' +
+            '\"name\": \"' + chosen_Category_Data.name + '\",' +
+            '\"description\": \"' + chosen_Category_Data.description + '\",' +
+            '\"url\": \"' + chosen_Category_Data.url + '\"}}';
 
         // -- get final json array string
         var finalJsonArrayString = "{\"products\": ";
@@ -55,7 +69,7 @@
         finalJsonArrayString += JSON.stringify(finalJsonArrayData);
         finalJsonArrayString = finalJsonArrayString.replace(']', '], ' + chosenCategoryJson);
         finalJsonArrayData = jQuery.parseJSON(finalJsonArrayString);
-        return finalJsonArrayData;
+        return finalJsonArrayData;*/
     }
 
     var getProductById = function(jsonArray, productId) {
@@ -86,11 +100,9 @@
 
     // Builds HTML for the single category page based on the data
     // from the server
-    function buildProductListHTML(productListData) {
+    function buildProductListHTML(products_Data) {
         // -- get list of products filtered by category Id.
-        productListData = filterProductsByCategory(productListData.products, chosen_Category_Id);
-        // -- store into global variable
-        filtered_Products_Data = productListData;
+        filtered_Products_Data = filterProductsByCategory(products_Data, chosen_Category_Id);
 
         // Load title snippet of menu items page
         $ajaxUtils.sendGetRequest(
@@ -104,7 +116,8 @@
                         //$helper.switchMenuToActive();
 
                         var menuItemsViewHtml =
-                            showProductListHTML(productListData,
+                            showProductListHTML(
+                                filtered_Products_Data,
                                 page_Header_Html,
                                 product_Html);
                         $helper.insertHtml("#main-content", menuItemsViewHtml);
@@ -117,21 +130,21 @@
 
     // Using category and menu items data and snippets html
     // build menu items view HTML to be inserted into page
-    function showProductListHTML(productListData,
+    function showProductListHTML(products_Data,
         page_Header_Html,
         product_Html) {
 
         page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categories");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", productListData.category.id);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", productListData.category.thumb);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", productListData.category.name);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", productListData.category.description);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", chosen_Category_Data.id);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", chosen_Category_Data.thumb);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", chosen_Category_Data.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", chosen_Category_Data.description);
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row list'>";
 
         // Loop over menu items
-        var menuItems = productListData.products;
+        var menuItems = products_Data;
         for (var i = 0; i < menuItems.length; i++) {
             // Insert menu item values
             var html = product_Html;

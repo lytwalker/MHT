@@ -4,54 +4,46 @@
 	var categories = {};
 
     // database
-    var category_types_Json_Url = "db/category-types.json"/*"https://my-first-project-d25f7.firebaseio.com/categorytypes.json"*/;
-    var categories_Json_Url = "db/categoryList.json";
+    var types_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/types.json";
+    var categories_Json_Url = "https://mandyshairtreasures-cms.herokuapp.com/categories.json";
 
 	// snippets
     var page_Header_Html = "snippets/page-header.html";
     var category_Html = "snippets/category-snippet.html";
 
 	// properties
-    var category_Types_Data = "";
-    var chosen_Category_Type = "";
+    var types_Data = "";
+    var chosen_Type = "";
+    var chosen_Type_Data = "";
     var filtered_Categories_Data = "";
 
 
     // -- FILTER METHODS --
 
-    // Load the category types view
-    function loadCategoryTypes() {
+    // Load the types view
+    function loadTypes() {
         $helper.showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
-            category_types_Json_Url,
-            function(categoryTypes){
-            	category_Types_Data = categoryTypes.categorytypes;
+            types_Json_Url,
+            function(types){
+            	types_Data = types;
             });
     };
 
 	// Filter
     var filterCategoriesByTypeName = function(jsonArray, typeName) {
         // -- get current category
-        var categoryTypeJson = $.grep(category_Types_Data, function(element, index) {
+        var type_Json = $.grep(types_Data, function(element, index) {
             return element.name === typeName;
         });
-        var chosenCategoryTypeData = categoryTypeJson[0];
-        var chosenCategoryTypeJson =
-            '\"categorytypes\": {' +
-            '\"banner\": \"' + chosenCategoryTypeData.banner + '\",' +
-            '\"name\": \"' + chosenCategoryTypeData.name + '\",' +
-            '\"description\": \"' + chosenCategoryTypeData.description + '\",' +
-            '\"url\": \"' + chosenCategoryTypeData.url + '\"}}';
+        chosen_Type_Data = type_Json[0];
 
-        // -- get final json array string
-        var finalJsonArrayString = "{\"categories\": ";
-        var finalJsonArrayData = $.grep(jsonArray, function(element, index) {
-            return element.typeName == typeName;
+        // -- get categories with the same type_id as the chosen_Type_data
+        var filter_Json_Array_Data = $.grep(jsonArray, function(element, index) {
+            return element.type_id == chosen_Type_Data.id;
         });
-        finalJsonArrayString += JSON.stringify(finalJsonArrayData);
-        finalJsonArrayString = finalJsonArrayString.replace(']', '], ' + chosenCategoryTypeJson);
-        finalJsonArrayData = jQuery.parseJSON(finalJsonArrayString);
-        return finalJsonArrayData;
+
+        return filter_Json_Array_Data;
     }
 
     // -- FILTER METHODS -- END
@@ -60,8 +52,8 @@
     // Load the categories view
     categories.loadCategoryList = function(categoryName) {
         $helper.showLoading("#main-content");
-    	loadCategoryTypes();
-    	chosen_Category_Type = categoryName;
+    	loadTypes();
+    	chosen_Type = categoryName;
         $ajaxUtils.sendGetRequest(
             categories_Json_Url,
             buildCategoryListHTML);
@@ -70,7 +62,7 @@
     // Builds HTML for the categories page based on the data
     // from the server
     function buildCategoryListHTML(categoriesData) {
-        filtered_Categories_Data = filterCategoriesByTypeName(categoriesData.categories, chosen_Category_Type);
+        filtered_Categories_Data = filterCategoriesByTypeName(categoriesData, chosen_Type);
 
         // Load title snippet of categories page
         $ajaxUtils.sendGetRequest(
@@ -81,10 +73,11 @@
                     category_Html,
                     function(category_Html) {
                         // Switch CSS class active to menu button
-                        $helper.switchMenuToActive(chosen_Category_Type);
+                        $helper.switchMenuToActive(chosen_Type);
 
                         var categoriesViewHtml =
-                            showCategoryListHTML(filtered_Categories_Data,
+                            showCategoryListHTML(
+                                filtered_Categories_Data,
                                 page_Header_Html,
                                 category_Html);
                         $helper.insertHtml("#main-content", categoriesViewHtml);
@@ -101,17 +94,17 @@
         page_Header_Html,
         category_Html) {
 
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "categorytypes");
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", categoryData.categorytypes.name);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", categoryData.categorytypes.banner);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", categoryData.categorytypes.name);
-        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", categoryData.categorytypes.description);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "type", "types");
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "name", chosen_Type_Data.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "banner", chosen_Type_Data.banner);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "pagetitle", chosen_Type_Data.name);
+        page_Header_Html = $helper.insertProperty(page_Header_Html, "description", chosen_Type_Data.description);
 
         var finalHtml = page_Header_Html;
         finalHtml += "<div class='container-fluid'><section class='row list'>";
 
         // Loop over categories
-        var categoryItems = categoryData.categories;
+        var categoryItems = categoryData;
         for (var i = 0; i < categoryItems.length; i++) {
             // Insert category values
             var html = category_Html;
