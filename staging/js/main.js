@@ -75,7 +75,6 @@
             false);
     };
 
-
     global.$main = main;
 
 })(window);

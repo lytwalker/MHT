@@ -209,11 +209,21 @@
         html = $helper.insertProperty(html, "protrait", productDetailsData.preview);
         html = $helper.insertProperty(html, "name", productDetailsData.name);
         html = $helper.insertProperty(html, "category_id", productDetailsData.category_id);
-        html = $helper.insertItemPrice(html, "price", productDetailsData.price);
         html = $helper.insertProperty(html, "description", productDetailsData.description);
         html = $helper.insertProperty(html, "sku", productDetailsData.sku);
+
+        // prices
+        var options = "<select id='prices' class='selectpicker' >";
+        $.each(productDetailsData.prices, function(i, item){
+            var lengthcost =  item.length + " " + item.cost;
+            options += "<option length='" + item.length + "'" + " cost='" + item.cost + "''>" + lengthcost + "</option>"
+        });
+        options += "</select>"
+
+        html = $helper.insertProperty(html, "prices", options);
+        html = $helper.insertItemPrice(html, "price", productDetailsData.price);
+
         finalHtml += html;
-        
 
         finalHtml += "</section></div>";
         return finalHtml;
