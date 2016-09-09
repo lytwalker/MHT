@@ -1,12 +1,26 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('templateStore', [
+var mhtStore = angular.module('mhtStore', [
   'ngRoute',
-  'templateStore.view1',
-  'templateStore.view2',
-  'templateStore.templates'
+  'mhtStore.home',
+  'mhtStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/templates'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);
+
+// Header controller
+mhtStore.controller("HeaderCtrl", function($scope, $location) {
+	$scope.appDetails = {};
+	$scope.appDetails.title = "Mandy's Hair Treasures";
+	$scope.appDetails.tagline = "Quality Hair Products";
+
+	$scope.nav = {};
+	$scope.nav.isActive = function(path){
+		if (path === $location.path()) {
+			return true;
+		}
+		return false;
+	}
+});

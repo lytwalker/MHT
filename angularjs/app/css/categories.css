@@ -1,0 +1,54 @@
+
+
+/* CATEGORIES PAGE */
+
+.product-tile {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 300px;
+    margin: 40px auto 0px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-tile span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #000;
+    opacity: .5;
+    /*display: none;*/
+}
+
+.product-tile span:hover {
+    /*transition: all 0.8s ease;
+  display: block;*/
+}
+
+.product-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#categories-title + div {
+    margin-bottom: 50px;
+}
+
+
+/* END CATEGORIES PAGE */
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 479px) {
+    .product-tile {
+        margin: 10px auto 26px;
+    }
+}

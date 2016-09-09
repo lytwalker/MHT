@@ -1,52 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="templateStore">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" ng-app="mhtStore">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mandy's Hair Treasures</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="app.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/carousel.css">
+        <link rel="stylesheet" type="text/css" href="pages/home/home.css">
+        <link rel="stylesheet" type="text/css" href="css/categories.css">
+        <link rel="stylesheet" type="text/css" href="css/products.css">
+        <link rel="stylesheet" type="text/css" href="css/contact.css">
+        <link rel="stylesheet" type="text/css" href="css/socialmedia.css">
+    </head>
 
-    <title>Template Store</title>
+    <body>
+        <header ng-controller="HeaderCtrl">
+            <nav id="header-nav" class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div id="brand-nav" class="navbar-header col-lg-12 col-md-12 col-sm-12">
+                        <a id="main-brand" class="navbar-brand" href="#/home">
+                            {{appDetails.title}}<br/>
+                            <small>{{appDetails.tagline}}</small>
+                        </a>
+                        <form id="search-nav" class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                            <div><a href=""><strong>Free International Shipping</strong></a></div>
+                        </form>
+                        <button id="menu-nav-button" type="button" class="navbar-toggle collapsed col-xs-12" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-grey">
+                    <div class="container-fluid">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div id="menu-navbar-collapse" class="collapse navbar-collapse">
+                            <ul id="menu-nav" class="nav nav-pills nav-justified">
+                                <li ng-class="{active: nav.isActive('/home')}"><a href="#/home">Home</a></li>
+                                <li ng-class="{active: nav.isActive('/templates')}"><a href="#/templates">Templates</a></li>
+                                <li ng-class="{active: nav.isActive('/about')}"><a href="#/about">About</a></li>
+                                <li class="StylesButton dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ng-class="{active: nav.isActive('/wigs')}" class="StylesButton"><a href="#/wigs">Wigs</a></li>
+                                        <li ng-class="{active: nav.isActive('/extensions')}" class="StylesButton"><a href="#/extensions">Extensions</a></li>
+                                        <li ng-class="{active: nav.isActive('/closures')}" class="StylesButton"><a href="#/closures">Closures</a></li>
+                                    </ul>
+                                </li>
+                                <li ng-class="{active: nav.isActive('/aftercare')}"><a href="#/aftercare">Aftercare</a></li>
+                                <li ng-class="{active: nav.isActive('/deals')}"><a href="#/deals">Deals</a></li>
+                                <li ng-class="{active: nav.isActive('/contact-us')}"><a href="#/contact-us">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <div ng-view></div>
+        
+        <!-- FOOTER -->
+        <footer>
+            <div id="newsletter" class="bg-grey">
+                <div class="container-fluid">
+                    <div id="subscribe">
+                        <!-- Begin MailChimp Signup Form -->
+                        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                        <style type="text/css">
+                        #mc_embed_signup {
+                            background: #fff;
+                            clear: left;
+                            font: 14px Helvetica, Arial, sans-serif;
+                            width: 100%;
+                        }
+                        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                        </style>
+                        <div id="mc_embed_signup">
+                            <form action="//mandyshairtreasures.us13.list-manage.com/subscribe/post?u=7afc24e775d47a98392a61283&amp;id=0abff3b643" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <label for="mce-EMAIL">
+                                        <h3>Stay Informed</h3>
+                                        <p>Subscribe and stay updated on new products and deals</p>
+                                    </label>
+                                    <div class="row">
+                                        <input type="email" value="" name="EMAIL" class="email col-lg-8 col-md-8 col-sm-8 col-xs-12" id="mce-EMAIL" placeholder="Email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                            <input type="text" name="b_7afc24e775d47a98392a61283_0abff3b643" tabindex="-1" value="">
+                                        </div>
+                                        <div class="clear col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                            <input type="submit" class="button col-lg-11 col-md-11 col-sm-11 col-xs-11" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                                            <div class="socialmedia col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <a href="https://www.facebook.com/HairTreasuresByMandy?ref=hl"><span>Facebook</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div id="footer-nav">
+                    <p class="pull-right"><a href="#">Back to top</a></p>
+                    <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#" onclick="$main.loadHelp();">Help</a>
+                    <p></p>
+                </div>
+                <div id="copyright">
+                    <p class="pull-right">Proudly designed & developed by <a href="#">Sleeping Chicken Software</a></p>
+                    <p>&copy; 2016 by Mandy's Hair Treasures.</p>
+                </div>
+            </div>
+        </footer>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="app.css">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#/templates">Template Store</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-
-      <div ng-view></div>
-
-    </div><!-- /.container -->
-      
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="app.js"></script>
-    <script src="view1/view1.js"></script>
-    <script src="view2/view2.js"></script>
-    <script src="templates/templates.js"></script>
-  </body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="app.js"></script>
+        <script src="pages/home/home.js"></script>
+        <script src="view1/view1.js"></script>
+        <script src="view2/view2.js"></script>
+        <script src="templates/templates.js"></script>
+        <script src="js/ajax-utils.js"></script>
+        <!-- <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/helper.js"></script>
+        <script type="text/javascript" src="js/categories.js"></script>
+        <script type="text/javascript" src="js/products.js"></script>
+        <script type="text/javascript" src="js/contact.js"></script> -->
+    </body>
 </html>
 

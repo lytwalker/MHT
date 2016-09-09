@@ -1,4 +1,6 @@
-angular.module('templateStore.templates',['ngRoute'])
+'use strict';
+
+angular.module('mhtStore.templates',['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider){
 	$routeProvider.

@@ -1,0 +1,55 @@
+.list {
+    margin-bottom: 40px;
+}
+
+.menu-item-photo > img {
+    margin: 0 auto;
+    border-radius: 0;
+    display: block;
+}
+
+.menu-item-description {
+    margin: 30px 0;
+}
+
+.menu-item-price {
+    font-size: 1.2em;
+}
+
+table {
+    background-color: #ddd;
+}
+
+table tr:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td {
+    padding: 10px 15px;
+    border: #eee solid 1px;
+}
+
+table tr td:first-child {
+    background-color: #F9408A;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+
+
+/********** Medium devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 768px) {
+    .menu-item-photo > img {
+        display: block;
+    }
+}
+
+
+/********** Super small devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 425px) {
+    .list {
+        margin-top: 40px;
+    }
+}
