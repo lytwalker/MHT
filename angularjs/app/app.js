@@ -4,6 +4,8 @@
 var mhtStore = angular.module('mhtStore', [
   'ngRoute',
   'mhtStore.home',
+  'mhtStore.about',
+  'mhtStore.contact',
   'mhtStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
