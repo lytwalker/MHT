@@ -1,0 +1,28 @@
+[
+    {
+        "banner": "landscape",
+        "name": "Wigs",
+        "description": "Choose your Perfect style",
+        "url": ""
+    }, {
+        "banner": "landscape",
+        "name": "Extensions",
+        "description": "Get the longer look you want",
+        "url": ""
+    }, {
+        "banner": "landscape",
+        "name": "Closures",
+        "description": "Keep your look seamless",
+        "url": ""
+    }, {
+        "banner": "landscape",
+        "name": "Aftercare",
+        "description": "Look after your new look",
+        "url": ""
+    }, {
+        "banner": "landscape",
+        "name": "Deals",
+        "description": "More than you would expect",
+        "url": ""
+    }
+]

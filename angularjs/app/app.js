@@ -6,6 +6,7 @@ var mhtStore = angular.module('mhtStore', [
   'mhtStore.home',
   'mhtStore.about',
   'mhtStore.contact',
+  'mhtStore.styles',
   'mhtStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -13,10 +14,15 @@ config(['$routeProvider', function($routeProvider) {
 }]);
 
 // Header controller
-mhtStore.controller("HeaderCtrl", function($scope, $location) {
+mhtStore.controller("HeaderCtrl", function($scope, $location, $http) {
 	$scope.appDetails = {};
 	$scope.appDetails.title = "Mandy's Hair Treasures";
 	$scope.appDetails.tagline = "Quality Hair Products";
+    
+
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function(styles_data){
+        $scope.styles = styles_data;
+    });
 
 	$scope.nav = {};
 	$scope.nav.isActive = function(path){
@@ -26,3 +32,20 @@ mhtStore.controller("HeaderCtrl", function($scope, $location) {
 		return false;
 	}
 });
+
+// Dependencies
+// -- Packages
+/*mhtStore.factory("styleService", function($http){
+	var styles = [];
+    
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function(styles_data){
+        styles = styles_data;
+    });
+
+	// Get all packges function
+	return {
+		getStyles: function(){
+			return styles;
+		}
+	}
+});*/

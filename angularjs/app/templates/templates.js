@@ -17,6 +17,7 @@ angular.module('mhtStore.templates',['ngRoute'])
 .controller('TemplatesCtrl', ['$scope', '$http', function($scope, $http){
     $http.get('json/templates.json').success(function(data){
         $scope.templates = data;
+        //console.log(JSON.stringify($scope.templates))
     });
 }])
 

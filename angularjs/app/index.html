@@ -54,13 +54,10 @@
                                 <li class="StylesButton dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li ng-class="{active: nav.isActive('/wigs')}" class="StylesButton"><a href="#/wigs">Wigs</a></li>
-                                        <li ng-class="{active: nav.isActive('/extensions')}" class="StylesButton"><a href="#/extensions">Extensions</a></li>
-                                        <li ng-class="{active: nav.isActive('/closures')}" class="StylesButton"><a href="#/closures">Closures</a></li>
+                                        <li ng-repeat="style in styles" ng-class="{active: nav.isActive('/styles/{{style.id}}/{{style.name}}')}" class="StylesButton"><a href="#/styles/{{style.id}}/{{style.name}}">{{style.name}}</a></li>
                                     </ul>
                                 </li>
-                                <li ng-class="{active: nav.isActive('/aftercare')}"><a href="#/aftercare">Aftercare</a></li>
-                                <li ng-class="{active: nav.isActive('/deals')}"><a href="#/deals">Deals</a></li>
+                                <li ng-class="{active: nav.isActive('/news')}"><a href="#/news">News</a></li>
                                 <li ng-class="{active: nav.isActive('/contact-us')}"><a href="#/contact-us">Contact Us</a></li>
                             </ul>
                         </div>
@@ -119,7 +116,7 @@
             <div class="container-fluid">
                 <div id="footer-nav">
                     <p class="pull-right"><a href="#">Back to top</a></p>
-                    <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#" onclick="$main.loadHelp();">Help</a>
+                    <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Help</a>
                     <p></p>
                 </div>
                 <div id="copyright">
@@ -136,6 +133,7 @@
         <script src="js/ajax-utils.js"></script>
         <script src="app.js"></script>
         <script src="pages/pages.js"></script>
+        <script src="modules/modules.js"></script>
         <script src="templates/templates.js"></script>
     </body>
 </html>
