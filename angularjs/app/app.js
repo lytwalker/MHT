@@ -21,7 +21,7 @@ mhtStore.controller("HeaderCtrl", function($scope, $location, $http) {
 	$scope.appDetails.tagline = "Quality Hair Products";
     
 
-    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/types.json'*/'json/types.json').success(function(styles_data){
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json'/*'json/types.json'*/).success(function(styles_data){
         $scope.styles = styles_data;
     });
 

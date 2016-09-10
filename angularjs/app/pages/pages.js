@@ -9,7 +9,6 @@ angular.module('mhtStore.home', ['ngRoute'])
   });
 }])
 .controller('HomeCtrl', [function() {
-    //$( "#page-header" ).css( "display", "none" );
 }]);
 
 
