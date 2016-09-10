@@ -13,7 +13,7 @@
     background-repeat: no-repeat;
 }
 
-.product-tile span {
+.product-tile > span {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -31,6 +31,10 @@
 .product-tile span:hover {
     /*transition: all 0.8s ease;
   display: block;*/
+}
+.product-tile > span small span {
+    text-transform: lowercase;
+    font-size: 0.8em;
 }
 
 .product-tile:hover {

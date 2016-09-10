@@ -11,7 +11,7 @@
                 <span>
         {{product.name}}
         <br/>
-        <small>{{product.price | currency:'£'}}</small>
+        <small><span>from</span> {{product.prices[0].cost | currency:'£'}}</small>
         </span>
             </div>
         </a>
