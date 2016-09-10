@@ -1,28 +1,41 @@
-[
-    {
-        "banner": "landscape",
-        "name": "Wigs",
-        "description": "Choose your Perfect style",
-        "url": ""
-    }, {
-        "banner": "landscape",
-        "name": "Extensions",
-        "description": "Get the longer look you want",
-        "url": ""
-    }, {
-        "banner": "landscape",
-        "name": "Closures",
-        "description": "Keep your look seamless",
-        "url": ""
-    }, {
-        "banner": "landscape",
-        "name": "Aftercare",
-        "description": "Look after your new look",
-        "url": ""
-    }, {
-        "banner": "landscape",
-        "name": "Deals",
-        "description": "More than you would expect",
-        "url": ""
-    }
-]
+[{
+    "id": 1,
+    "banner": "landscape",
+    "name": "Wigs",
+    "description": "Choose your Perfect style",
+    "url": "https://mandyshairtreasures-cms.herokuapp.com/types/1.json",
+    "created_at": "2016-09-05T12:15:40.770Z",
+    "updated_at": "2016-09-05T12:15:40.770Z"
+}, {
+    "id": 2,
+    "banner": "landscape",
+    "name": "Extensions",
+    "description": "Get the longer look you want",
+    "url": "https://mandyshairtreasures-cms.herokuapp.com/types/2.json",
+    "created_at": "2016-09-05T12:15:40.778Z",
+    "updated_at": "2016-09-05T12:15:40.778Z"
+}, {
+    "id": 3,
+    "banner": "landscape",
+    "name": "Closures",
+    "description": "Keep your look seamless",
+    "url": "https://mandyshairtreasures-cms.herokuapp.com/types/3.json",
+    "created_at": "2016-09-05T12:15:40.784Z",
+    "updated_at": "2016-09-05T12:15:40.784Z"
+}, {
+    "id": 4,
+    "banner": "landscape",
+    "name": "Aftercare",
+    "description": "Look after your new look",
+    "url": "https://mandyshairtreasures-cms.herokuapp.com/types/4.json",
+    "created_at": "2016-09-05T12:15:40.789Z",
+    "updated_at": "2016-09-05T12:15:40.789Z"
+}, {
+    "id": 5,
+    "banner": "landscape",
+    "name": "Deals",
+    "description": "More than you would expect",
+    "url": "https://mandyshairtreasures-cms.herokuapp.com/types/5.json",
+    "created_at": "2016-09-05T12:15:40.794Z",
+    "updated_at": "2016-09-05T12:15:40.794Z"
+}]

@@ -7,6 +7,7 @@ var mhtStore = angular.module('mhtStore', [
   'mhtStore.about',
   'mhtStore.contact',
   'mhtStore.styles',
+  'mhtStore.products',
   'mhtStore.templates'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -20,7 +21,7 @@ mhtStore.controller("HeaderCtrl", function($scope, $location, $http) {
 	$scope.appDetails.tagline = "Quality Hair Products";
     
 
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function(styles_data){
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/types.json'*/'json/types.json').success(function(styles_data){
         $scope.styles = styles_data;
     });
 

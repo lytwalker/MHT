@@ -35,6 +35,22 @@ table tr td:first-child {
     color: #fff;
 }
 
+/** Product Prices **/
+
+.prices h4 {
+    padding-left: 15px;
+}
+.prices .price {
+    text-align: center;
+    background-color: #fff;
+    border: dotted 1px #000;
+    padding: 10px;
+}
+.prices .mainPrice {
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
 
 
 /********** Medium devices Only :-) (e.g., iPhone 4) **********/

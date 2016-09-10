@@ -1,7 +1,15 @@
-<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12" ng-repeat="category in categories">
-  <a href="#">
-    <div class="product-tile" style="background-image: url('images/categories/{{category_id}}/{{thumb}}.jpg')">
-      <span>{{category.name}}</span>
+<div id="page-header" style="background-image: url('images/types/{{pageTitle}}/{{banner}}.jpg')">
+    <div class="container-fluid">
+        <h2 id="category-title" class="text-center">{{pageTitle}}</h2>
+        <p id="category-subtitle" class="text-center">{{description}}</p>
     </div>
-  </a>
+</div>
+<div class="container-fluid">
+    <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12" ng-repeat="category in categories">
+        <a href="#/products/{{category.name}}/{{category.id}}">
+            <div class="product-tile" style="background-image: url('images/categories/{{category.id}}/{{category.thumb}}.jpg')">
+                <span>{{category.name}}</span>
+            </div>
+        </a>
+    </div>
 </div>
