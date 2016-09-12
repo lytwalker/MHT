@@ -30,7 +30,7 @@ function ProductsCtrl($scope, $http, $routeParams, $filter) {
     var categoryId = $routeParams.categoryId;
 
     // -- Get chosen category
-    $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/categories.json'*/ 'json/categories.json').success(function (categories_data) {
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json').success(function (categories_data) {
         $scope.category = $filter('filter')(categories_data, function (item) {
             return item.id == categoryId;
         })[0];
@@ -41,7 +41,7 @@ function ProductsCtrl($scope, $http, $routeParams, $filter) {
     });
 
     // -- Get products - by categoryId    
-    $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/products.json'*/ 'json/products.json').success(function (products_data) {
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/products.json').success(function (products_data) {
         $scope.products = $filter('filter')(products_data, function (item) {
             return item.category_id == categoryId;
         });;
@@ -54,7 +54,7 @@ function ProductDetailsCtrl($scope, $http, $routeParams, $filter, $sce, cartServ
     var productId = $routeParams.productId;
 
     // -- Get product from product id
-    $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/products.json'*/ 'json/products.json').success(function (data) {
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/products.json').success(function (data) {
         $scope.product = $filter('filter')(data, function (product_item) {
             return product_item.id == productId;
         })[0];

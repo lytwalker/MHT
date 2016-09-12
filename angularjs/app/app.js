@@ -10,8 +10,7 @@
         'mhtStore.about',
         'mhtStore.contact',
         'mhtStore.styles',
-        'mhtStore.products',
-        'mhtStore.templates'
+        'mhtStore.products'
     ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({
@@ -28,7 +27,7 @@
         $scope.appDetails.tagline = "Quality Hair Products";
 
         // -- Styles drop-down list in Nav-bar
-        $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/types.json'*/ 'json/types.json').success(function (styles_data) {
+        $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function (styles_data) {
             $scope.styles = styles_data;
         });
 
@@ -49,7 +48,7 @@
     function ProductService($http) {
         var products = [];
 
-        $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/products.json'*/ 'json/products.json').success(function (products_data) {
+        $http.get('https://mandyshairtreasures-cms.herokuapp.com/products.json').success(function (products_data) {
             products = products_data;
         });
 
