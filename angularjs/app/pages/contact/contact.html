@@ -9,9 +9,9 @@
 <div class="container">
     <div id="contact">
         <p>
-            Please call us on <a href="tel:+447586745231">+44 758 674 5231</a>, email us at <a href="mailto:mandyshairtreasures@outlook.com">mandyshairtreasures@outlook.com</a>, or fill in the form and we’ll get back to you within 24 hours.
+           <big>Please call us on <br> <a href="tel:+447586745231">+44 758 674 5231</a>, <br> email us at <br> <a href="mailto:mandyshairtreasures@outlook.com">mandyshairtreasures@outlook.com</a>, <br> or fill in the form and we’ll get back to you within 24 hours.</big>
         </p>
-        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+        <form class="well form-horizontal" action="send_form_email.php" method="post" id="contact_form" style="display:none;">
             <fieldset>
                 <!-- Text input-->
                 <div class="form-group">
@@ -39,7 +39,7 @@
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                            <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                            <input name="telephone" placeholder="(845)555-1212" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label"></label>
                     <div class="col-md-4">
-                        <button type="submit" class="btn btn-warning button">Send <span class="glyphicon glyphicon-send"></span></button>
+                        <button type="submit" value="Submit" class="btn btn-warning button">Send <span class="glyphicon glyphicon-send"></span></button>
                     </div>
                 </div>
             </fieldset>

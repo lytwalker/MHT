@@ -101,6 +101,11 @@ body {
 #menu-nav .caret {
   display: none;
 }
+#menu-nav .cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 #menu-navbar-collapse {
 }
 .bg-grey {

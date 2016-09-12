@@ -4,13 +4,14 @@
 
     // Declare app level module which depends on views, and components
     var mhtStore = angular.module('mhtStore', [
-      'ngRoute',
-      'mhtStore.home',
-      'mhtStore.about',
-      'mhtStore.contact',
-      'mhtStore.styles',
-      'mhtStore.products',
-      'mhtStore.templates'
+        'ngRoute',
+        'ngSanitize',
+        'mhtStore.home',
+        'mhtStore.about',
+        'mhtStore.contact',
+        'mhtStore.styles',
+        'mhtStore.products',
+        'mhtStore.templates'
     ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({
@@ -25,7 +26,6 @@
         $scope.appDetails = {};
         $scope.appDetails.title = "Mandy's Hair Treasures";
         $scope.appDetails.tagline = "Quality Hair Products";
-        console.log('Parent HeaderCtrl');
 
         // -- Styles drop-down list in Nav-bar
         $http.get( /*'https://mandyshairtreasures-cms.herokuapp.com/types.json'*/ 'json/types.json').success(function (styles_data) {
