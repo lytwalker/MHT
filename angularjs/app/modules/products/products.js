@@ -12,13 +12,25 @@ angular.module('mhtStore.products',['ngRoute'])
 			templateUrl: 'modules/products/product-details.html',
 			controller: 'ProductDetailsCtrl'
 		})
+		.when("/cart", {
+			templateUrl: "modules/checkout/cart.html",
+			controller: "CartCtrl"
+		})
 }])
+.controller('ProductsCtrl', ProductsCtrl)
+.controller('ProductDetailsCtrl', ProductDetailsCtrl)
+.controller('CartCtrl', CartCtrl)
+.factory("cartService", CartServices);
 
-.controller('ProductsCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter){
+
+// FUNCTIONS
+// -- Products List
+ProductsCtrl.$inject = ['$scope', '$http', '$routeParams', '$filter'];
+function ProductsCtrl($scope, $http, $routeParams, $filter){
     var categoryId = $routeParams.categoryId;
     
     // -- Get chosen category
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json'/*'json/categories.json'*/).success(function(categories_data){
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/categories.json'*/'json/categories.json').success(function(categories_data){
         $scope.category = $filter('filter')(categories_data, function(item){
             return item.id == categoryId;
         })[0];
@@ -29,16 +41,18 @@ angular.module('mhtStore.products',['ngRoute'])
     });
     
     // -- Get products - by categoryId    
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/products.json'/*'json/products.json'*/).success(function(products_data){        
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/products.json'*/'json/products.json').success(function(products_data){        
         $scope.products = $filter('filter')(products_data, function(item){
             return item.category_id == categoryId;
         });;
     });
-}])
+};
 
-.controller('ProductDetailsCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter){
+// -- Products Details
+ProductDetailsCtrl.$inject = ['$scope', '$http', '$routeParams', '$filter', 'cartService'];
+function ProductDetailsCtrl($scope, $http, $routeParams, $filter, cartService){
     var productId = $routeParams.productId;
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/products.json'/*'json/products.json'*/).success(function(data){
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/products.json'*/'json/products.json').success(function(data){
         $scope.product = $filter('filter')(data, function(d){
             return d.id == productId;
         })[0];
@@ -58,4 +72,39 @@ angular.module('mhtStore.products',['ngRoute'])
         $scope.mainLength = price.length;
         $scope.mainPrice = price.cost;
     }
-}]);
+
+    // -- Add this product to the cart
+	$scope.addToCart = function(product) {
+		cartService.addToCart(product);
+	}
+}
+
+// -- Cart
+CartCtrl.$inject = ['$scope', 'cartService'];
+function CartCtrl($scope, cartService){
+	$scope.cart = cartService.getCart();
+
+	$scope.buy = function(product) {
+		cartService.buy(product);
+	}
+};
+
+
+// DEPENDENCIES
+// -- Cart
+function CartServices(){
+	var cart = [];
+
+	// Get all packges function
+	return {
+		getCart: function(){
+			return cart;
+		},
+		addToCart: function(product){
+			cart.push(product);
+		},
+		buy: function(product) {
+			alert("Congrats. You successfully purchased this product.");
+		}
+	}
+}

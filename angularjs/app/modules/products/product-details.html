@@ -33,6 +33,7 @@
             </div>
             <div class="mainPrice"><strong>CHOICE:</strong> {{mainLength}} for {{mainPrice | currency:'£'}}</div>
         </div>
+        <strong><button class="btn" ng-click="addToCart(product)">ADD TO CART</button></strong>
         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
             <!-- Specifies Buy Now Button -->
             <input type="hidden" name="cmd" value="_xclick">

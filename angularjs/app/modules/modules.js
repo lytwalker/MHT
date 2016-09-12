@@ -9,11 +9,18 @@ angular.module('mhtStore.styles', ['ngRoute'])
       controller: 'StylesCtrl'
   });
 }])
-.controller('StylesCtrl', ['$scope', '$http', '$routeParams', '$filter', function($scope, $http, $routeParams, $filter) {
+.controller('StylesCtrl', StylesCtrl);
+
+
+// FUNCTIONS
+// -- Styles List
+StylesCtrl.$inject = ['$scope', '$http', '$routeParams', '$filter'];                                     
+function StylesCtrl($scope, $http, $routeParams, $filter) {
     var styleId = $routeParams.styleId;
+    //console.log($scope.appDetails.title);
     
     // -- Get chosen style
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json'/*'json/types.json'*/).success(function(types_data){
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/types.json'*/'json/types.json').success(function(types_data){
         $scope.type = $filter('filter')(types_data, function(item){
             return item.id == styleId;
         })[0];
@@ -23,9 +30,9 @@ angular.module('mhtStore.styles', ['ngRoute'])
     });
     
     // -- Get categories - by styleId
-    $http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json'/*'json/categories.json'*/).success(function(categories_data){
+    $http.get(/*'https://mandyshairtreasures-cms.herokuapp.com/categories.json'*/'json/categories.json').success(function(categories_data){
         $scope.categories = $filter('filter')(categories_data, function(item){
             return item.type_id == styleId;
         });
     });
-}]);
+}

@@ -1,0 +1,16 @@
+<div id="main-content" class="container-fluid">
+    <p>This is the cart</p>
+    <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12" ng-repeat="product in cart">
+        <a href="#">
+            <div class="product-tile text-center" style="background-image: url('images/{{product.thumb}}.jpg')">
+                <span>
+                        {{product.name}}
+                        <br/>
+                        <small>{{product.price | currency:'$'}}</small>
+                        <br/>
+                        <strong><button class="btn" ng-click="buy(product)">BUY</button></strong>
+                    </span>
+            </div>
+        </a>
+    </div>
+</div>
