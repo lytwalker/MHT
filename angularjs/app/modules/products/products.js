@@ -9,13 +9,13 @@ angular.module('mhtStore.products', ['ngRoute'])
             controller: 'ProductsCtrl'
         }).
         when('/products/:productId', {
-                templateUrl: 'modules/products/product-details.html',
-                controller: 'ProductDetailsCtrl'
-            })
-            .when("/cart", {
-                templateUrl: "modules/checkout/cart.html",
-                controller: "CartCtrl"
-            })
+            templateUrl: 'modules/products/product-details.html',
+            controller: 'ProductDetailsCtrl'
+        })
+        .when("/cart", {
+            templateUrl: "modules/checkout/cart.html",
+            controller: "CartCtrl"
+        })
 }])
     .controller('ProductsCtrl', ProductsCtrl)
     .controller('ProductDetailsCtrl', ProductDetailsCtrl)

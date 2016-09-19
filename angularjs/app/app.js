@@ -10,7 +10,8 @@
         'mhtStore.about',
         'mhtStore.contact',
         'mhtStore.styles',
-        'mhtStore.products'
+        'mhtStore.products',
+        'mhtStore.articles'
     ])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({

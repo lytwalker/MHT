@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="pages/home/home.css">
     <link rel="stylesheet" type="text/css" href="css/categories.css">
     <link rel="stylesheet" type="text/css" href="modules/products/products.css">
+    <link rel="stylesheet" type="text/css" href="modules/articles/articles.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="stylesheet" type="text/css" href="css/socialmedia.css">
 </head>
@@ -58,7 +59,7 @@
                                     <li ng-repeat="style in styles" ng-class="{active: nav.isActive('/styles/{{style.id}}/{{style.name}}')}" class="StylesButton"><a href="#/styles/{{style.id}}/{{style.name}}">{{style.name}}</a></li>
                                 </ul>
                             </li>
-                            <li ng-class="{active: nav.isActive('/news')}"><a href="#/news">News</a></li>
+                            <li ng-class="{active: nav.isActive('/articles')}"><a href="#/articles">News</a></li>
                             <li ng-class="{active: nav.isActive('/contact-us')}"><a href="#/contact-us">Contact Us</a></li>
                             <li ng-class="{active: nav.isActive('/cart')}"><a class="cart" href="#/cart">Cart</a></li>
                         </ul>
@@ -138,6 +139,7 @@
     <script src="pages/pages.js"></script>
     <script src="modules/modules.js"></script>
     <script src="modules/products/products.js"></script>
+    <script src="modules/articles/articles.js"></script>
 </body>
 
 </html>
