@@ -34,7 +34,6 @@ function ProductsCtrl($scope, $http, $routeParams, $filter) {
         $scope.category = $filter('filter')(categories_data, function (item) {
             return item.id == categoryId;
         })[0];
-        $scope.domainName = "https://mandyshairtreasures-cms.herokuapp.com";
         $scope.banner = $scope.category.image;
         $scope.pageTitle = $scope.category.name;
         $scope.categoryId = $scope.category.id;
@@ -59,7 +58,6 @@ function ProductDetailsCtrl($scope, $http, $routeParams, $filter, $sce, cartServ
         $scope.product = $filter('filter')(data, function (product_item) {
             return product_item.id == productId;
         })[0];
-        $scope.domainName = "https://mandyshairtreasures-cms.herokuapp.com";
         /*$scope.mainImage = $scope.product.images[0].name;*/
         $scope.mainImage = $scope.product.photo;
         $scope.mainLength = $scope.product.prices[0].length;

@@ -8,7 +8,7 @@
     <div class="row article" ng-repeat="article in articles">
         <div class="col-sm-3 col-xxs-12">
             <a href="#/articles/{{article.id}}">
-                <div class="article-tile text-center" style="background-image: url('https://mandyshairtreasures-cms.herokuapp.com{{article.image}}')">
+                <div class="article-tile text-center" style="background-image: url('{{parent.appDetails.domainName}}{{article.image}}')">
                 </div>
             </a>
         </div>

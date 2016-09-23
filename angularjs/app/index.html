@@ -20,15 +20,15 @@
     <link rel="stylesheet" type="text/css" href="css/socialmedia.css">
 </head>
 
-<body>
-    <header ng-controller="HeaderCtrl">
+<body ng-controller="ParentCtrl as parent" class="{{parent.class}}">
+    <header ng-controller="HeaderCtrl as header">
         <nav id="header-nav" class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div id="brand-nav" class="navbar-header col-lg-12 col-md-12 col-sm-12">
                     <a id="main-brand" class="navbar-brand" href="#/home">
-                            {{ :: appDetails.title}}<br/>
-                            <small>{{ :: appDetails.tagline}}</small>
+                            {{ :: header.title}}<br/>
+                            <small>{{ :: header.tagline}}</small>
                         </a>
                     <form id="search-nav" class="navbar-form navbar-right" role="search">
                         <div class="form-group">
@@ -50,18 +50,18 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div id="menu-navbar-collapse" class="collapse navbar-collapse">
                         <ul id="menu-nav" class="nav nav-pills nav-justified">
-                            <li ng-class="{active: nav.isActive('/home')}"><a href="#/home">Home</a></li>
+                            <li ng-class="{active: header.nav.isActive('/home')}"><a href="#/home">Home</a></li>
                             <!-- <li ng-class="{active: nav.isActive('/templates')}"><a href="#/templates">Templates</a></li> -->
-                            <li ng-class="{active: nav.isActive('/about')}"><a href="#/about">About</a></li>
+                            <li ng-class="{active: header.nav.isActive('/about')}"><a href="#/about">About</a></li>
                             <li class="StylesButton dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li ng-repeat="style in styles" ng-class="{active: nav.isActive('/styles/{{style.id}}/{{style.name}}')}" class="StylesButton"><a href="#/styles/{{style.id}}/{{style.name}}">{{style.name}}</a></li>
+                                    <li ng-repeat="style in parent.reused_types | orderBy:'id'" ng-class="{active: nav.isActive('/styles/{{style.id}}/{{style.name}}')}" class="StylesButton"><a href="#/styles/{{style.id}}/{{style.name}}">{{style.name}}</a></li>
                                 </ul>
                             </li>
-                            <li ng-class="{active: nav.isActive('/articles')}"><a href="#/articles">News</a></li>
-                            <li ng-class="{active: nav.isActive('/contact-us')}"><a href="#/contact-us">Contact Us</a></li>
-                            <li ng-class="{active: nav.isActive('/cart')}"><a class="cart" href="#/cart">Cart</a></li>
+                            <li ng-class="{active: header.nav.isActive('/articles')}"><a href="#/articles">News</a></li>
+                            <li ng-class="{active: header.nav.isActive('/contact-us')}"><a href="#/contact-us">Contact Us</a></li>
+                            <li ng-class="{active: header.nav.isActive('/cart')}"><a class="cart" href="#/cart">Cart</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->

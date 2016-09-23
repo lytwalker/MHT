@@ -17,14 +17,12 @@ angular.module('mhtStore.styles', ['ngRoute'])
 StylesCtrl.$inject = ['$scope', '$http', '$routeParams', '$filter'];                                     
 function StylesCtrl($scope, $http, $routeParams, $filter) {
     var styleId = $routeParams.styleId;
-
     
     // -- Get chosen style
     $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function(types_data){
         $scope.type = $filter('filter')(types_data, function(item){
             return item.id == styleId;
         })[0];
-        $scope.domainName = "https://mandyshairtreasures-cms.herokuapp.com";
         $scope.banner = $scope.type.image;
         $scope.pageTitle = $scope.type.name;
         $scope.description = $scope.type.description;

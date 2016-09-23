@@ -1,4 +1,4 @@
-<div id="page-header" style="background-image: url('{{domainName}}{{banner}}')">
+<div id="page-header" style="background-image: url('{{parent.appDetails.domainName}}{{banner}}')">
     <div class="container-fluid">
         <h2 id="category-title" class="text-center">{{pageTitle}}</h2>
         <p id="category-subtitle" class="text-center">{{description}}</p>
@@ -6,11 +6,11 @@
 </div>
 <div class="container product-details">
     <div class="col-md-4">
-        <img class="img-full" ng-src="{{domainName}}{{mainImage}}">
+        <img class="img-full" ng-src="{{parent.appDetails.domainName}}{{mainImage}}">
         <div class="row">
             <div ng-repeat="image in product.images | limitTo:4">
                 <div class="col-md-3">
-                    <img class="img-full" ng-src="{{domainName}}{{image.name}}" ng-click="setImage(image)">
+                    <img class="img-full" ng-src="{{parent.appDetails.domainName}}{{image.name}}" ng-click="setImage(image)">
                 </div>
             </div>
         </div>
@@ -33,6 +33,6 @@
             </div>
             <div class="mainPrice"><strong>CHOICE:</strong> {{mainLength}} for {{mainPrice | currency:'£'}}</div>
         </div>
-        <strong><button class="btn btn-default" ng-click="addToCart(product)">ADD TO CART</button></strong>
+        <strong><button class="btn btn-default pink" ng-click="addToCart(product)">ADD TO CART</button></strong>
     </div>
 </div>
