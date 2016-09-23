@@ -1,4 +1,4 @@
-<div id="page-header" style="background-image: url('images/categories/{{categoryId}}/{{banner}}.jpg')">
+<div id="page-header" style="background-image: url('{{domainName}}{{banner}}')">
     <div class="container-fluid">
         <h2 id="category-title" class="text-center">{{pageTitle}}</h2>
         <p id="category-subtitle" class="text-center">{{description}}</p>
@@ -6,11 +6,11 @@
 </div>
 <div class="container product-details">
     <div class="col-md-4">
-        <img class="img-full" ng-src="images/products/{{mainImage}}.jpg">
+        <img class="img-full" ng-src="{{domainName}}{{mainImage}}">
         <div class="row">
             <div ng-repeat="image in product.images | limitTo:4">
                 <div class="col-md-3">
-                    <img class="img-full" ng-src="images/products/{{image.name}}" ng-click="setImage(image)">
+                    <img class="img-full" ng-src="{{domainName}}{{image.name}}" ng-click="setImage(image)">
                 </div>
             </div>
         </div>

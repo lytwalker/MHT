@@ -1,4 +1,4 @@
-<div id="page-header" style="background-image: url('images/categories/{{categoryId}}/{{banner}}.jpg')">
+<div id="page-header" style="background-image: url('{{domainName}}{{banner}}')">
     <div class="container-fluid">
         <h2 id="category-title" class="text-center">{{pageTitle}}</h2>
         <p id="category-subtitle" class="text-center">{{description}}</p>
@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12" ng-repeat="product in products">
         <a href="#/products/{{product.id}}">
-            <div class="product-tile text-center" style="background-image: url('images/products/{{product.id}}/{{thumb}}.jpg')">
+            <div class="product-tile text-center" style="background-image: url('{{domainName}}{{product.photo}}')">
                 <span>
         {{product.name}}
         <br/>

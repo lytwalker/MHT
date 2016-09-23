@@ -26,6 +26,7 @@
         $scope.appDetails = {};
         $scope.appDetails.title = "Mandy's Hair Treasures";
         $scope.appDetails.tagline = "Quality Hair Products";
+        $scope.appDetails.domainName = "https://mandyshairtreasures-cms.herokuapp.com";
 
         // -- Styles drop-down list in Nav-bar
         $http.get('https://mandyshairtreasures-cms.herokuapp.com/types.json').success(function (styles_data) {
