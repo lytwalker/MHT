@@ -25,6 +25,8 @@
                 <div ng-repeat="price in product.prices">
                     <div class="col-md-3">
                         <div class="price" ng-click="setPrice(price)">
+                            <small>{{price.colour}}</small>
+                            <br> 
                             {{price.length}}
                             <br> {{price.cost | currency:'£'}}
                         </div>

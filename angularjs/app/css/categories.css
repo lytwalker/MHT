@@ -13,6 +13,10 @@
     background-repeat: no-repeat;
 }
 
+.product-tile.cart {
+    margin: 0 auto;
+}
+
 .product-tile > span {
     position: absolute;
     bottom: 0;

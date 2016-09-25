@@ -10,18 +10,13 @@
     <div class="row article" ng-repeat="product in cart">
         <div class="col-sm-3 col-xxs-12">
             <a href="#/products/{{product.id}}">
-                <div class="product-tile text-center" style="background-image: url('{{parent.appDetails.domainName}}{{product.photo}}')">
-                    <span>
-                        {{product.name}}
-                        <br/>
-                        <small>{{product.price | currency:'$'}}</small>
-                    </span>
+                <div class="product-tile cart text-center" style="background-image: url('{{parent.appDetails.domainName}}{{product.photo}}')">
                 </div>
             </a>
         </div>
         <div class="col-sm-9 col-xxs-12">
-            <h2>{{product.title}}</h2>
-            <p ng-bind-html="product.description"></p>
+            <h2>{{product.name}}</h2>
+            <h3>{{product.price | currency:'$'}}</h3>
         </div>
     </div>
 </div>
