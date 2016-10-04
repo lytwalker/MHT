@@ -1,4 +1,4 @@
-<div id="page-header" style="background-image: url('images/categories/{{categoryId}}/{{banner}}.jpg')">
+<div id="page-header" style="background-image: url('{{banner}}')">
     <div class="container-fluid">
         <h2 id="category-title" class="text-center">{{pageTitle}}</h2>
         <p id="category-subtitle" class="text-center">{{description}}</p>
@@ -8,7 +8,7 @@
     <div class="row article" ng-repeat="article in articles">
         <div class="col-sm-3 col-xxs-12">
             <a href="#/articles/{{article.id}}">
-                <div class="article-tile text-center" style="background-image: url('{{parent.appDetails.domainName}}{{article.image}}')">
+                <div class="article-tile text-center" style="background-image: url('{{article.image}}')">
                 </div>
             </a>
         </div>

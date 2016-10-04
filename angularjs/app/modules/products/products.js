@@ -20,7 +20,8 @@ angular.module('mhtStore.products', ['ngRoute'])
     .controller('ProductsCtrl', ProductsCtrl)
     .controller('ProductDetailsCtrl', ProductDetailsCtrl)
     .controller('CartCtrl', CartCtrl)
-    .factory("cartService", CartServices);
+    .factory("cartService", CartServices)
+    .factory("categoryService", CategoryServices);
 
 
 // FUNCTIONS
@@ -60,21 +61,23 @@ function ProductDetailsCtrl($scope, $http, $routeParams, $filter, $sce, cartServ
         })[0];
         /*$scope.mainImage = $scope.product.images[0].name;*/
         $scope.mainImage = $scope.product.photo;
-        $scope.mainLength = $scope.product.prices[0].length;
-        $scope.mainPrice = $scope.product.prices[0].cost;
+        if($scope.product.prices.length > 0)
+        {
+            $scope.mainLength = $scope.product.prices[0].length;
+            $scope.mainPrice = $scope.product.prices[0].cost;
+        }
 
         // -- Set page title area details based on products category
-        /*$http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json').success(function (category_data) {
+        $http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json').success(function (category_data) {
             $scope.category = $filter('filter')(category_data, function (category_item) {
                 return category_item.id == $scope.product.category_id;
             })[0];
             
-            console.log('$scope.product.category_id: ', $scope.product.category_id);
             $scope.pageTitle = $scope.category.name;
             $scope.categoryId = $scope.category.id;
             $scope.description = $scope.category.description;
-            $scope.banner = $scope.category.thumb;
-        });*/
+            $scope.banner = $scope.category.image;
+        });
     });
 
     // -- Update details page main image
@@ -121,6 +124,24 @@ function CartServices() {
         },
         buy: function (product) {
             alert("Congrats. You successfully purchased this product.");
+        }
+    }
+}
+// -- Categories
+function CategoryServices() {
+    var category;
+
+    // -- Get chosen category
+    $http.get('https://mandyshairtreasures-cms.herokuapp.com/categories.json').success(function (categories_data) {
+        category = $filter('filter')(categories_data, function (item) {
+            return item.id == categoryId;
+        })[0];
+    });
+
+    // Get all packges function
+    return {
+        getCategory: function () {
+            return category;
         }
     }
 }
